@@ -29,12 +29,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 ext {
     version_retrofit = "2.9.0"
     version_navigation = "1.0.0"
-    koin_version = '2.2.1'
+    koin_version= "3.2.0-beta-1"
 }
 
 dependencies {
@@ -60,9 +65,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
     //koin
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    implementation "org.koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
 
     // Navigation
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
