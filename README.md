@@ -1,4 +1,4 @@
-# interviewHomework
+# InterviewHomework
 
 __Please use the Github users API to present a users list__
 
