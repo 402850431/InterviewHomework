@@ -1,6 +1,5 @@
-package com.example.homework.network.user_service
+package com.example.homework.network.user
 
-import com.example.homework.network.user_service.GitUser
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.Query

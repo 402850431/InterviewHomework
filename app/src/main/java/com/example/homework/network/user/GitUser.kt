@@ -1,9 +1,7 @@
-package com.example.homework.network.user_service
+package com.example.homework.network.user
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import retrofit2.http.GET
-import retrofit2.http.Query
 
 @JsonClass(generateAdapter = true)
 data class GitUser(

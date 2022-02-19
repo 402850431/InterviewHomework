@@ -1,6 +1,6 @@
 package com.example.homework.network
 
-import com.example.homework.network.user_service.GitUserApiService
+import com.example.homework.network.user.GitUserApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
