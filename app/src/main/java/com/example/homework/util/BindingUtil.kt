@@ -38,10 +38,13 @@ import com.example.homework.ui.GitUserListAdapter
 fun ImageView.glideLoadImg(imgUrl: String?) {
     imgUrl?.let {
         Glide.with(this.context)
-                .load(imgUrl)
-                .apply(RequestOptions()
-                        .placeholder(R.drawable.loading_animation)
-                        .error(R.drawable.ic_baseline_broken_image_24))
-                .into(this)
+            .load(imgUrl)
+            .apply(
+                RequestOptions()
+                    .placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.ic_baseline_broken_image_24)
+            )
+            .circleCrop()
+            .into(this)
     }
 }

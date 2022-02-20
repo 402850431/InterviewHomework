@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_user_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GitUserListFragment : Fragment() {
+
 //    private val viewModel: UserListViewModel by viewModel()
 
     private val viewModel: UserListViewModel by lazy {
@@ -41,7 +42,7 @@ class GitUserListFragment : Fragment() {
 
     private fun initObserver() {
         viewModel.gitUserList.observe(viewLifecycleOwner) {
-            userListAdapter.submitList(it)
+            userListAdapter.addFooterAndSubmitList(it)
         }
     }
 
