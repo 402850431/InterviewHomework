@@ -25,9 +25,6 @@ class UserListViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 mGitUserList = GitUserApi.retrofitService.getGitUserList()
-                mGitUserList.forEach {
-                    it.userDetail = GitUserApi.retrofitService.getUserDetail(it.login)
-                }
                 _gitUserList.value = mGitUserList
             } catch (e: Exception) {
                 e.printStackTrace()
