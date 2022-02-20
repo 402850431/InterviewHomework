@@ -17,16 +17,17 @@
 
 package com.example.homework.util
 
-import android.view.View
+import android.content.Intent
+import android.net.Uri
 import android.widget.ImageView
-import androidx.core.net.toUri
+import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.homework.R
-import com.example.homework.network.user.GitUser
-import com.example.homework.ui.GitUserListAdapter
+import com.example.homework.ui.MainActivity
+
 
 //@BindingAdapter("listData")
 //fun bindAdapterData(recyclerView: RecyclerView, data: List<GitUser>?) {
@@ -46,5 +47,13 @@ fun ImageView.glideLoadImg(imgUrl: String?) {
             )
             .circleCrop()
             .into(this)
+    }
+}
+
+@BindingAdapter("imgLink")
+fun ImageView.setImgLink(url: String) {
+    this.setOnClickListener {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        context.startActivity(browserIntent)
     }
 }
