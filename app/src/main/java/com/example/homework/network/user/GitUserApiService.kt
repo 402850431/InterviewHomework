@@ -2,6 +2,7 @@ package com.example.homework.network.user
 
 import retrofit2.http.GET
 import retrofit2.http.PATCH
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -15,4 +16,10 @@ interface GitUserApiService {
 
     @PATCH("user")
     suspend fun getGitUser(): List<GitUser>
+
+    @GET("users/{login}")
+    suspend fun getUserDetail(
+        @Path("login") login: String,
+    ): UserDetail
+
 }

@@ -23,24 +23,26 @@
             android:adjustViewBounds="true"
             app:imageUrl="@{gitUser.avatarUrl}"
             app:imgLink="@{gitUser.htmlUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            tools:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{gitUser.login}"
             android:layout_marginTop="4dp"
+            android:text="@{gitUser.login}"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:autoLink="web"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth="true"
-            tools:text="userName"/>
+            tools:text="userName" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,12 +50,12 @@
             android:layout_marginTop="4dp"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth="true"
-            tools:text="userName"/>
-
+            android:text="@{gitUser.userDetail.name}"
+            tools:text="userName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

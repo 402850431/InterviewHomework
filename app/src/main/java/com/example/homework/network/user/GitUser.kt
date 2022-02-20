@@ -41,4 +41,6 @@ data class GitUser(
     val type: String,
     @Json(name = "url")
     val url: String
-)
+) {
+    var userDetail: UserDetail? = null
+}

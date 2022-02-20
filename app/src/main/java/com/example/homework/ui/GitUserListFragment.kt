@@ -4,15 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.homework.databinding.FragmentUserListBinding
 import kotlinx.android.synthetic.main.fragment_user_list.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class GitUserListFragment : Fragment() {
-
-//    private val viewModel: UserListViewModel by viewModel()
+class GitUserListFragment : BaseFragment() {
 
     private val viewModel: UserListViewModel by lazy {
         ViewModelProvider(this)[UserListViewModel::class.java]
@@ -24,11 +20,13 @@ class GitUserListFragment : Fragment() {
         })
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = FragmentUserListBinding.inflate(inflater).root.apply {
+        loading()
         viewModel.getUserList()
     }
 
@@ -42,6 +40,7 @@ class GitUserListFragment : Fragment() {
 
     private fun initObserver() {
         viewModel.gitUserList.observe(viewLifecycleOwner) {
+            hideLoading()
             userListAdapter.addFooterAndSubmitList(it)
         }
     }
