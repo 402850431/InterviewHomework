@@ -13,9 +13,6 @@ class UserListViewModel : ViewModel() {
     val gitUserList: LiveData<List<GitUser>>
         get() = _gitUserList
 
-    init {
-        getUserList()
-    }
 
     fun getUserList() {
         viewModelScope.launch {
